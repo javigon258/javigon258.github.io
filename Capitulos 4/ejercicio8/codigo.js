@@ -1,12 +1,19 @@
-let numero = prompt("Escribe un numero entero para comprobar si es par o impar: ");
+{
+	document.addEventListener("DOMContentLoaded",init);
  
-let resul = especNumero(numero);
-prompt("El número "+numero+" es "+resul);
+	function recogerNum(){
+		return prompt("Escribe un numero entero para comprobar si es par o impar: ");
+	}
 
-function especNumero(numero) {
-	if (numero % 2 ==0) {
-		return "Numero par.";
-	}else{
-		return "Numero impar.";
+	function especNumero(numero) {
+		if (numero % 2 ==0) {
+			return "Numero par.";
+		}else{
+			return "Numero es impar.";
+		}
+	}
+	function init(){
+		let resp = document.getElementById("respuesta");
+		resp.innerHTML = especNumero(recogerNum());
 	}
 }
