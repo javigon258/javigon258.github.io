@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css">
+    <title>Listado de window y screen</title>
+
+    <script src="Ejercicio4.js"></script>
+    <style>
+        ul{
+            position: fixed;
+        }
+        ul,ol.lista{
+            list-style-type: number;
+        }
+        body {
+            position: relative;
+            min-height: 100em;
+        }
+        div {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Mi URL. Crea una página que te muestre debidamente desglosada la url. (servidor, protocolo, ruta...)</p>
+    <p id="hostnm"></p>
+    <p id="href"></p>
+    <p id="origin"></p>
+    <p id="pathname"></p>
+    <p id="protocol"></p>
+    <p><a href="../../../index.html">Atrás</a></p>
+
+</body>
+
+</html>

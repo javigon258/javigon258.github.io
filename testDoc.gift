@@ -1,0 +1,47 @@
+//Pregunta 1
+:: Como hacer referencia con el metodo getElementById: {
+~ \=     # \= let ne = document.getElementById(nuestr);
+= \=     # \= foto=document.getElementById("mifoto")
+~ \=     # \= Cookies.set(expires=Thu, 01-Jan-70 00:00:01 GMT;';
+}
+
+//Pregunta 2
+:: lastModified que nos mostraria {
+~No es posible que nos devuelva la ultima fecha de modificacion
+=Devuelve la date y hora de la última modificación del file fuente del documento
+~Nos devuelva realmente la fecha de última modificación
+~Esta propiedad ha sido eliminada de esta y ahora es no-estandar.
+}
+
+//Pregunta 3
+:: Varias maneras para usar la propiedad title: {
+~ \=     # \= var x = document.getElementById("myAbbr").title;
+= \=     # \= var element_title = element.title; document.getElementById('imageReplace').title= element_title ;
+}
+
+//Pregunta 4
+:: ¿Cual es la diferencia entre window.onload() y document.ready()? {
+~onload se lanza cuando se ha cargado completamente la página, 
+y ready, está disponible antes de que eso ocurra.
+=Document, cuando esté listo sólo el documento, podríamos decir, la parte HTML, 
+y window, cuando está lista toda la ventana, el documento y todo lo demás.
+~Window no se cargara hasta que no ese lista toda la ventana y todo lo demas y,
+Document cuando este listo el documento.
+}
+
+//Pregunta 5
+:: Como especificar con la propiedad cookie, que expire: {
+~ \=     # \= Cookies.set('name', 'Kate Morley', {expiry : new Date(20300, 1)});
+= \=     # \= Cookies.set('theme', 'green', {expiry : 3600});
+~ \=     # \= Cookies.set(expires=Thu, 01-Jan-70 00:00:01 GMT;';
+}
+
+//Pregunta 6
+:: Selecciona cual es la erronea: {
+~ \=     # \= window.getSelection().delete();
+= \=     # \= var range = window.getSelection().getRangeAt(0);
+~ \=     # \= window.getSelection().createRange();
+}
+
+
+
