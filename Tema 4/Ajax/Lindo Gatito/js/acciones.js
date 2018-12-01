@@ -63,13 +63,12 @@
     }
 
     function dormir() {
-        if(!this.dormir){
-            accionImg.innerHTML = `<img src="./image/enfermo.jpg">`;
-        }
+        gato.dormir();
+        accionImg.innerHTML = `<img src="./image/dormir.jpg">`;
     }
 
     function compruebaEstado() {
-        if (gato.getMuerto()) {
+        if (gato.enfermo()) {
             accionImg.innerHTML = `<img src="./image/enfermo.jpg">`;
             nombre.innerHTML = "<b>Nombre: </b> "+ gato.getNombre();
             fechaNac.innerHTML = '<b>Fecha de Nacimiento: </b>' + gato.getFecha() +' <b>Edad:</b> ' + gato.edad + ' años';

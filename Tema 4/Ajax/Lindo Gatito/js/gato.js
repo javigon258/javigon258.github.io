@@ -8,23 +8,27 @@
         this.edad = getEdad(fechaNac);
         this.raza = raza;
         this.peso = peso;
-        this.muerto = false;
+        this.enfermo = false;
     }
+    Gato.prototype.isMuerto = false;
+
+    Gato.prototype.isDurmiendo = false;
 
     Gato.prototype.jugar = function(){
-        if (this.peso > 1) {
+        if (this.peso > 1) 
             this.peso--;
-          } else {
-            this.muerto = true;
-          }
+            this.isMuerto = true;
+          
     }
     Gato.prototype.comer= function(){
-        if (this.peso < 15) {
+        if (this.peso < 15) 
             this.peso++;
-          } else {
-            this.muerto = true;
-          }   
+            this.isMuerto = true;
     }
+    Gato.prototype.dormir = function() {
+        this.isDurmiendo = true;
+      }
+      
     Gato.prototype.getNombre = function(){
         return this.nombre;
     }
@@ -42,6 +46,6 @@
         return this.peso;
     }
     Gato.prototype.getEnfermo = function(){
-        return this.muerto;
+        return this.isMuerto;
     }
 }
