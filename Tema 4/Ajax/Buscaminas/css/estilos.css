@@ -1,0 +1,13 @@
+h1{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+body>div{
+    text-align: center;
+}
+#tablero{
+    width: 40%;
+    margin: auto;
+    border: 2px solid black;
+}
