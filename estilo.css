@@ -1,7 +1,7 @@
-/*img {
-  width: 1350px;
-  height: 250px;
-}*/
+body{
+  margin: 0;
+  padding: 0;
+}
 div,
 img {
   display: block;
