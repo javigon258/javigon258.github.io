@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="js/Factura.js"></script>
+    <script src="js/Cliente.js"></script>
+    <script src="js/Empresa.js"></script>
+    <script src="js/Productos.js"></script>
+    <script src="js/main.js"></script>
+    <title>Factura</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+
+  <body>
+      <noscript>
+          Mensaje que deberia mostraria si el navegador no es compatible con
+          javascript.
+        </noscript>
+    <label>Fecha: </label><input type="date" id="fechaFactura" />
+    <div id="datos">
+      <h3>Datos de la Empresa.</h3>
+      <label>Nombre: </label><input type="text" id="nombreEmpresa" />
+      <label>CIF: </label><input type="text" id="cifEmpresa" />
+      <label>Dirección: </label><input type="text" id="direccionEmpresa" />
+      <label>Teléfono: </label><input type="tel" id="tlfEmpresa" />
+    </div>
+    <div id="datosCliente">
+      <h3>Datos del cliente.</h3>
+      <label>Nombre: </label><input type="text" id="nombreCliente" />
+      <label>CIF: </label><input type="text" id="cifCliente" />
+      <label>Dirección: </label><input type="text" id="direccionCliente" />
+      <label>Teléfono: </label><input type="tel" id="tlfCliente" />
+    </div>
+    <div id="refs">
+      <table id="tabla">
+        <tr>
+          <th>Descripción</th>
+          <th>Unidades</th>
+          <th>Precio</th>
+          <th>Iva</th>
+        </tr>
+        <tr>
+          <td><input type="text" id="descripcion" /></td>
+          <td><input type="number" id="unidades" /></td>
+          <td><input type="number" id="precioProducto" /></td>
+          <td>
+            <select id="iva">
+              <option value="0.04">4%</option>
+              <option value="0.1">10%</option>
+              <option value="0.21">21%</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <button id="addLinea">Añadir nueva línea</button>
+    <button id="crearFactura">Crear Factura</button>
+    <p id="error"></p>
+  </body>
+</html>
