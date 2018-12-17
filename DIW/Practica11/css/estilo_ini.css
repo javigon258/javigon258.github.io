@@ -1,0 +1,118 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("../image/fondo.jpg");
+  background-size: cover;
+}
+header, footer{
+    color: white;
+}
+header{
+	text-align: center;	
+}
+section{
+	background-color: #F7DC6F; 
+	border: 1px solid white;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+article{
+	background-color: #D0D3D4;
+	padding-bottom: 5px;  
+	padding-right: 8px;  
+	padding-left: 8px;  
+
+}
+.tituto_tarea{
+	padding-top: 5px;
+	font-size: 1.2em;
+	text-align: center;
+}
+@media screen and (min-width: 768px) {
+	main{
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas: 
+		"secDWEC secDWEC secDIW secDIW" 
+		"secDWES secDWES secHLC secHLC"
+		"secDAW secDAW secDAW secDAW";
+	}
+	#secDWEC{
+		grid-area: secDWEC;
+	}
+	#secDIW{
+		grid-area: secDIW;
+	}
+	#secDWES{
+		grid-area: secDWES;
+	}
+	#secHLC{
+		grid-area: secHLC;
+	}
+	#secDAW{
+		grid-area: secDAW;
+	}
+}
+@media screen and (min-width: 1024px) {
+	main{
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas: 
+		"secDWEC secDWEC secDWES secDWES secDIW secDIW" 
+		"secHLC secHLC secHLC secDAW secDAW secDAW";
+	}
+	#secDWEC{
+		grid-area: secDWEC;
+	}
+	#secDIW{
+		grid-area: secDIW;
+	}
+	#secDWES{
+		grid-area: secDWES;
+	}
+	#secHLC{
+		grid-area: secHLC;
+	}
+	#secDAW{
+		grid-area: secDAW;
+	}
+}
+h3{
+	text-align: center;
+}
+.general{
+	display: flex;
+}
+.nomb{
+	flex: 1;
+	text-align: left;
+	font-size: 1.5em;
+}
+.redesSoc{
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+.redesSoc div{
+	text-align: center;
+}
+.redesSoc2{
+    width: 19.7%;
+}
+.redesSoc2 img{
+    width: 50%;
+}
