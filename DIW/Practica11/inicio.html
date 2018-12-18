@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilo_ini.css">
 
@@ -11,112 +12,42 @@
 </head>
 <body>
 	<header>
-       <h1>Gestion de tareas</h1>
+       <div class="tit"><h1>Gestion de tareas</h1></div> 
+       <div class="contact"> <a href="contacto.html"><img src="image/card.svg" alt="contacto"></a> </div>  
 	</header>
-    <!--<nav>
-        <ul>
-            <li><a href="">INICIO</a></li>
-            <li><a href="">DIW</a></li>
-            <li><a href="">DWEC</a></li>
-            <li><a href="">DWES</a></li>
-            <li><a href="">HLC</a></li>
-            <li><a href="">DAW</a></li>
-        </ul>
-    </nav>-->
+
     <main>
-        <section id="secDWES">
-            <h3>DWES</h3>
-            <article>
-                <p class="tituto_tarea">Tarea 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
+        <section>
+            <article id="secDWES">
+                <h3><a href="vistatarea.html">DWES</a></h3>
+                <p class="tituto_tarea">Autentificación.</p>
+                <p class="textoInf">Implementa un sistema de autentificación básico utilizando un formulario, e implementa un sistema de autentificación utilizando las características del protocolo http.</p>
             </article>
-            <article>
-                <p class="tituto_tarea">Tarea 2</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
+
+            <article id="secDWEC">
+                <h3><a href="vistatarea.html">DWEC</a></h3>
+                <p class="tituto_tarea">Eventos de ratón</p>
+                <p class="textoInf">Para ello crea un canvas para cada evento. Deben reaccionar cambiando de color. Identifícalo con un texto. En todo momento muestra las coordenadas (x, y), button y buttons.  Recuerda comprobarlo al menos en los tres navegadores principales.</p>
             </article>
-        </section>
-        <section id="secDWEC">
-            <h3>DWEC</h3>
-            <article>
-                <p class="tituto_tarea">Tarea 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
+
+            <article id="secDIW">
+                <h3><a href="vistatarea.html">DIW</a></h3>
+                <p class="tituto_tarea">Mi primera página en html5</p>
+                <p class="textoInf">Entregar un fichero .html que contenga todas las nuevas etiquetas de html5 vistas en clase. No olvides la etiqueta main
+                    Poned vuestro nombre en la etiqueta. </p>
             </article>
-            <article>
-                <p class="tituto_tarea">Tarea 3</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
+
+            <article id="secHLC">
+                <h3><a href="vistatarea.html">HLC</a></h3>
+                <p class="tituto_tarea">Proyecto 3</p>
+                <p class="textoInf"> Diseñar y desarrollar una aplicación que presente en una lista una serie de items de interés
+                    con acceso a una ventana con información más detallada.</p>
             </article>
-        </section>
-        <section id="secDIW">
-            <h3>DIW</h3>
-            <article>
-                <p class="tituto_tarea">Tarea 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
-            </article>
-            <article>
-                <p class="tituto_tarea">Tarea 2</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
-            </article>
-        </section>
-        <section id="secHLC">
-            <h3>HLC</h3>
-            <article>
-                <p class="tituto_tarea">Tarea 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
-            </article>
-            <article>
-                <p class="tituto_tarea">Tarea 3</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
-            </article>   
-        </section>
-        <section id="secDAW">
-            <h3>DAW</h3>
-            <article>
-                <p class="tituto_tarea">Tarea 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
-            </article>
-            <article>
-                <p class="tituto_tarea">Tarea 2</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor eros est, nec suscipit sapien venenatis nec. Phasellus ac ex convallis, tempor nisi quis, consequat purus. Sed tellus mi, consectetur in cursus id, luctus sed tortor. Quisque ligula risus, bibendum et arcu vitae, porta bibendum quam. Sed semper fermentum aliquam. Cras pulvinar eu augue accumsan fringilla. Duis rutrum semper quam, vestibulum feugiat ipsum eleifend non. </p>
-                <div class="ediciones">
-                    <img src="image/writing.png" alt="editar">
-                    <img src="image/delete.png" alt="editar">
-                </div>
+ 
+            <article id="secDAW">
+                <h3><a href="vistatarea.html">DAW</a></h3>
+                <p class="tituto_tarea">Instalación Tomcat</p>
+                <p class="textoInf">Instalación de un servidor Apache con soporte para jsp y servlets mediante el uso de Tomcat.  Tomcat es un contenedor de servlets para aplicaciones Java. </p>
             </article>
         </section>
     </main>

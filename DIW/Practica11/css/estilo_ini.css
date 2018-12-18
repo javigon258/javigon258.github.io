@@ -8,36 +8,87 @@
 body{
   margin: 0;
   padding: 0;
-  background-image: url("../image/fondo.jpg");
-  background-size: cover;
+
 }
 header, footer{
-    color: white;
+    color: black;
 }
 header{
 	text-align: center;	
+	display: flex;
 }
-section{
-	background-color: #F7DC6F; 
-	border: 1px solid white;
-	margin-bottom: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
+.tit{
+	width: 90%;
+}
+.contact{
+	width: 10%;
+}
+.contact img{
+	width: 90%;
 }
 article{
-	background-color: #D0D3D4;
+	background-color: rgb(131, 145, 146); 
 	padding-bottom: 5px;  
 	padding-right: 8px;  
-	padding-left: 8px;  
-
+    padding-left: 8px;  
+    margin: 5px;
+}
+article {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+article:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: rgba(5, 5, 5, 0.9);
+	transition: 0.5s;
+}
+article:hover h3 a{
+    color:white;
+    transition: 0.5s;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 .tituto_tarea{
 	padding-top: 5px;
 	font-size: 1.2em;
 	text-align: center;
 }
+section p{
+	text-align: justify;
+	padding-left: 15px; 
+	padding-right: 15px;
+	color: white; 
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (min-width: 320px) {
+	.contact{
+		width: 10%;
+		margin-top: 8%;
+	}
+	.contact img{
+		width: 100%;
+	}
+	.nomb{
+		font-size: 1.2em;
+	}
+	.redesSoc2{
+		margin-top: 14%;
+	}
+}
+
 @media screen and (min-width: 768px) {
-	main{
+	.contact{
+		width: 10%;
+		margin-top: 0;
+	}
+	.contact img{
+		width: 100%;
+	}
+	section{
 		margin: 0;
 		padding: 0;
 		display: grid;
@@ -47,25 +98,25 @@ article{
 		"secDWEC secDWEC secDIW secDIW" 
 		"secDWES secDWES secHLC secHLC"
 		"secDAW secDAW secDAW secDAW";
+		grid-gap: 10px 10px;
 	}
-	#secDWEC{
-		grid-area: secDWEC;
-	}
-	#secDIW{
-		grid-area: secDIW;
-	}
-	#secDWES{
-		grid-area: secDWES;
-	}
-	#secHLC{
-		grid-area: secHLC;
-	}
-	#secDAW{
-		grid-area: secDAW;
+	.redesSoc2{
+		width: 25.7%;
+		margin-top: 0;
 	}
 }
 @media screen and (min-width: 1024px) {
-	main{
+	.contact{
+		transition: 1s;
+	}
+	header .contact:hover{
+		transform: rotate(360deg);
+		transition: 1s;
+	}
+	.contact img{
+		width: 60%;
+	}
+	section{
 		margin: 0;
 		padding: 0;
 		display: grid;
@@ -75,24 +126,32 @@ article{
 		"secDWEC secDWEC secDWES secDWES secDIW secDIW" 
 		"secHLC secHLC secHLC secDAW secDAW secDAW";
 	}
-	#secDWEC{
-		grid-area: secDWEC;
+	.nomb{
+		font-size: 1.5em;
 	}
-	#secDIW{
-		grid-area: secDIW;
-	}
-	#secDWES{
-		grid-area: secDWES;
-	}
-	#secHLC{
-		grid-area: secHLC;
-	}
-	#secDAW{
-		grid-area: secDAW;
+	.redesSoc2 {
+		margin-top: 0;
 	}
 }
+#secDWEC{
+	grid-area: secDWEC;
+}
+#secDIW{
+	grid-area: secDIW;
+}
+#secDWES{
+	grid-area: secDWES;
+}
+#secHLC{
+	grid-area: secHLC;
+}
+#secDAW{
+	grid-area: secDAW;
+}
 h3{
-	text-align: center;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
 }
 .general{
 	display: flex;
@@ -100,7 +159,6 @@ h3{
 .nomb{
 	flex: 1;
 	text-align: left;
-	font-size: 1.5em;
 }
 .redesSoc{
 	display: flex;
@@ -111,7 +169,12 @@ h3{
 	text-align: center;
 }
 .redesSoc2{
-    width: 19.7%;
+	width: 19.7%;
+	transition: 1s;
+}
+.redesSoc2:hover{
+	transform: rotateY(180deg);
+	transition: 1s;
 }
 .redesSoc2 img{
     width: 50%;

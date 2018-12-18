@@ -10,20 +10,24 @@ body{
   padding: 0;
 
 }
-header, footer{
-    color: black;
-}
 header{
+    color: black;
 	text-align: center;	
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 article{
+    background-color: #F7DC6F; 
+    text-align: center;
 	background-color: rgb(131, 145, 146); 
 	padding-bottom: 5px;  
 	padding-right: 8px;  
     padding-left: 8px;  
     margin: 5px;
 }
-section p, section label{
+label, p{
     color: white;
 }
 #nomb{
@@ -38,19 +42,14 @@ section p, section label{
 .addtarea{
     text-align: center;
 }
-a{
-    text-decoration: none;
-    color: black;
-}
+
 @media screen and (min-width: 320px) {
-    .redesSoc2{
-        width: 30%;
-        margin-top: 15vh;
+    article:hover input:invalid,article:hover textarea:invalid {
+        border: 2px solid rgba(178, 10, 10, 0.8);
+    }  
+    article:hover input:valid,article:hover textarea:valid {
+        border: 2px solid rgba(30, 178, 10, 0.8);
     }
-    .redesSoc2 img{
-        width: 50%;
-    }
-    
 }
 @media screen and (min-width: 768px) {
     section{
@@ -67,13 +66,6 @@ a{
     #espa{
         padding-left: 5px;
     }
-    .nuevaTarea img{
-        width: 12vh;
-    }
-    .redesSoc2{
-		width: 16%;
-		margin-top: 0;
-	}
 }
 @media screen and (min-width: 1024px) {
     section{
@@ -90,36 +82,10 @@ a{
     #espa{
         padding-left: 5px;
     }
-    .redesSoc2{
-		width: 10%;
-		margin-top: 0;
+    article:hover input:invalid, textarea:invalid {
+        border: 2px solid rgba(178, 10, 10, 0.8);
+    }  
+    article:hover input:valid, textarea:valid {
+        border: 2px solid rgba(30, 178, 10, 0.8);
     }
-    .redesSoc2 img{
-        width: 50%;
-    }
-}
-h3{
-	text-align: center;
-}
-.general{
-	display: flex;
-}
-.nomb{
-	flex: 1;
-	text-align: left;
-	font-size: 1.5em;
-}
-.redesSoc{
-	display: flex;
-	flex: 1;
-	justify-content: flex-end;
-}
-.redesSoc div{
-	text-align: center;
-}
-.redesSoc2{
-    width: 19.7%;
-}
-.redesSoc2 img{
-    width: 50%;
 }
