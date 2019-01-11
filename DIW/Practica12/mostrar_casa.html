@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest Rural</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/muestra_casa.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+</head>
+<body>
+    <script src="js/men.js"></script>
+    <header>
+        <div>
+            <h1>Rest Rural</h1>
+            <a href="#" id="abrirMenu"><i class="material-icons">menu</i></a>
+        </div>
+        <nav>
+            <ul class="topnav" id="myTopnav">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="buscar_casa.html">Filtrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article class="image">
+            </article>
+            <article class="descripcion">
+                <h3>Casa Las Jaras</h3>
+                <div class="contenido">
+                    <p class="texto">Casa Las Jaras se encuentra cerca de la ciudad de Córdoba, dentro de una tranquila urbanización, se encuentra esta bonita casa. Es un sitio ideal para descansar en el campo rodeados de naturaleza. Tiene dos terrazas desde las que se puede contemplar el paisaje verde de sierra. El interior está bien equipado, dispone de tres dormitorios, un amplio salón con chimenea, una cocina y un baño.</p>
+                    <p class="precio">Precio: <label class="valor">50€</label>/noche</p>
+                </div>
+            </article>
+            <article class="servicios">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><img class="icono" src="img/multiple-users-silhouette.svg"> 8 personas</li>
+                    <li><img class="icono" src="img/no-wifi.svg"> Sin internet</li>
+                    <li><img class="icono" src="img/no-pets.svg"> No animales</li>
+                    <li><img class="icono" src="img/swimming-pool.svg"> Piscina climatizada</li>
+                    <li><img class="icono" src="img/store.svg"> Tiendas cercanas</li>
+                    <li><img class="icono" src="img/old-typical-phone.svg"> Linea de telefono fijo</li>
+                    <li><img class="icono" src="img/hospital.svg"> Servicios sanitario</li>
+                </ul>
+            </article>
+            <article class="ubicacion">
+                <h3>Ubicación</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2644.996165447717!2d-4.850715830252885!3d37.9666669602232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6cdbd450eb6cff%3A0xf84141e25120db6a!2sCASA+LAS+JARAS+-+ALOJAMIENTO+RURAL!5e0!3m2!1ses!2ses!4v1547061669782" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </article>
+            <article class="datosReserva">
+                <h3>Realizar reserva</h3>
+                <div class="reserva">
+                    <p><label>Nombre</label>
+                    <input type="text" name="nombre" id="nombre"></p>
+                    <p><label>Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos"></p>
+                    <p><label>Correo</label>
+                    <input type="email" name="correo" id="correo"></p>
+                    <p><label>Telefono</label>
+                    <input type="tel" name="telefono" id="telefono"></p>
+                    <p><label>Fecha de entrada</label>
+                    <input type="date" name="fechaEntrada" id="fechaEntrada"></p>
+                    <p><label>Fecha de salida</label>
+                    <input type="date" name="fechaSalida" id="fechaSalida"></p>
+                    <p><label>Nº de personas</label>
+                    <select>
+                        <option value="2a4">2 a 4 personas</option>
+                        <option value="4a6">4 a 6 personas</option>
+                        <option value="6a8">6 a 8 personas</option>
+                    </select>
+                    <!--<input type="number" name="personas" id="personas">--></p>
+                </div>
+                <a href="#" class="mostrarCasa">Ver</a>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Javier González Guzmán</p>
+        <p class="tit">Rest Rural</p>
+        <p>© Todos los Derechos Reservados</p>
+    </footer>
+</body>
+</html>
