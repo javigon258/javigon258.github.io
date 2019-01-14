@@ -54,10 +54,12 @@ nav ul li a {
     text-align: center;
     border: 1px solid white;
 }
-
 article{
+    background-color: #C8E6C9;
+    border-radius: 20px;
     border: 1px solid black;
     margin: 20px 0 20px 0;
+    transition: all 0.3s;
 }
 
 .image img{
@@ -87,6 +89,26 @@ article{
     width: 24px;
     height: 25px;
 }  
+article:hover {
+    animation: slide-br 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    background-color: #282e28;
+    color: white;
+}
+article:hover h3{
+    color: white;
+}
+@keyframes slide-br {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(10px) translateX(0px);
+              transform: translateY(10px) translateX(0px);
+    }
+  }
+  
+
 h3{
     font-size: 1.5em;
     padding-top: 10px;
@@ -99,10 +121,6 @@ h3{
 }
 .tit{
     font-size: 2em;
-}
-article{
-    background-color: #C8E6C9;
-    border-radius: 20px;
 }
 .mostrarCasa {
     border-radius: 10px;

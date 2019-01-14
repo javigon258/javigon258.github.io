@@ -54,7 +54,8 @@ h1{
 }
 #inicio:hover{
     background-color: rgba(7, 206, 7, 0.9);
-    transition: all 1s ease;
+    transform: scale(1.5, 1.5);
+    transition: all 1s;
 }
 @media screen and (min-width: 768px) {
     h1{
