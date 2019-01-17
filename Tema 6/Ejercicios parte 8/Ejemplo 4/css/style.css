@@ -1,0 +1,11 @@
+#micapa{
+    left: 200px;
+    top: 100px;
+    position: absolute;
+    font-size: 0.75em;
+    font-family: tahoma, verdana, sans-serif;
+    width: 220px;
+    background-color: #ddf;
+    padding: 10px;
+    border: 1px solid #bbb;
+}

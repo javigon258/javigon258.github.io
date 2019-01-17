@@ -10,22 +10,23 @@
     crossorigin="anonymous"></script>
     <script src="js/archivo.js"></script>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
         <noscript>
                 Mensaje que deberia mostraria si el navegador no es compatible con javascript.
         </noscript>
-    <title>Quinto script con jQuery</title>
- 
-    <h1>Trabajando con eventos en jQuery</h1>
-	
-	<div id="elemento1">Pasa el ratón por encima de este "elemento1".</div>
-	<p>
-		Este texto es para poner <a id="elemento2" href="#">otro elemento con tip</a>.
-	</p>
-	
-	<div class="tip" id="tip1">Esto es para explicar algo sobre el elemento1</div>
-	<div class="tip" id="tip2">Explico mejor este otro elemento con tip!!</div>
-            
+    <h1>Cola de efectos por defecto en jQuery</h1>
+
+    <input type="button" id="botonfade" value="Muestra y luego oculta con fadeIn y fadeOut">
+    <input type="button" id="botonslide" value="Muestra y luego oculta con slideUp slideDown">
+    <input type="button" id="botontamanocola" value="Muestra el número de funciones en cola ahora mismo">
+
+	<div id="mensaje">
+		En estos momentos no hay funciones de efectos en la cola por defecto.
+		<br>
+		<span class="notar">Pulsa repetidas veces los botones de arriba para ir metiendo funciones en la cola</span>
+	</div>
+    <div id="micapa"></div>
 </body>
 </html>

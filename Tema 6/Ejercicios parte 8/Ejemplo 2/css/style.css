@@ -1,0 +1,9 @@
+body{
+    font-family: sans-serif;
+}
+h2{
+    padding: 30px;
+    background-color: #9f9;
+    background-image: url("fondo-h2.png");
+    color: #009;
+}

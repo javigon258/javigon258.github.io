@@ -1,0 +1,18 @@
+.tip{
+    background-color: #ffcc99;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    width: 200px;
+ }
+ #elemento1{
+    background-color: #ccccff; 
+    padding: 5px;
+ }
+ .otroestilotip{
+    background-color: #cccf49;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    width: 240px;
+ }

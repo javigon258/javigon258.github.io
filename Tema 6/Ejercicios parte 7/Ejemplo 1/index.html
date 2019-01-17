@@ -9,18 +9,20 @@
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
     <script src="js/archivo.js"></script>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <noscript>
             Mensaje que deberia mostraria si el navegador no es compatible con javascript.
     </noscript>
-    <title>Primer script con jQuery</title>
+    <h1>Primer script con jQuery</h1>
 
-    <h1>Trabajando con el objeto evento</h1>
-    <a class="mienlace" href="http://www.desarrolloweb.com/">Hazme clic, pero no te llevaré a mi href</a>
-	<br>
-	<a class="mienlace" href="http://www.desarrolloweb.com/">Hazme clic, pero no te llevaré tampoco</a>
-    
+	<p class="parpadear">Hola que tal, esto parpadeó gracias a jQuery!</p>
+	<p>Parafo normal que no va a parpadear.</p>
+	<p class="parpadear">Sí parpadea</p>
+	<p>Parafo normal que no va a parpadear tampoco...</p>
+	<div class="parpadear" >Esta capa también tiene la clase parpadear, con lo que ya se sabe...</div>
+	<p><input type="button" value="Parpadea de nuevo" id="botonparpadear"></p>
+
 </body>
 </html>

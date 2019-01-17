@@ -1,0 +1,10 @@
+#elemento1{
+    background-color: #ccccff; 
+    padding: 5px;
+}
+.tip{
+    background-color: #ffcc99;
+    padding: 10px;
+    display: none;
+    position: absolute;
+}
