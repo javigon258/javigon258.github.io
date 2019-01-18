@@ -16,7 +16,7 @@
             $("h2").fadeTo(1000,opacidad_deseada);
         });
         $("#pororden").click(function(e){
-            let opacidad_deseada = $("#selopacidad").attr("value");
+            let opacidad_deseada = $("#selopacidad").val();
             $("#e1").fadeTo(500, opacidad_deseada, function(){
                 $("#e2").fadeTo(500, opacidad_deseada, function(){
                     $("#e3").fadeTo(500, opacidad_deseada);
