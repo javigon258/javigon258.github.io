@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="js/archivo.js"></script>
+    </head>
+    
+    <body>
+        <noscript>
+            Mensaje que deberia mostraria si el navegador no es compatible con javascript.
+        </noscript>
+        <h2>1.Distintas formas de acceder al atributo checked. Compruébalo en las
+            distintas plataformas, tanto con input como con radio buttons
+        </h2>
+
+        <div id="ejercicio1"></div>
+    
+        <h2>2.De tres 'input type="checkbox"' que te deshabilite 2 al seleccionar una de ellas</h2>
+        <input id="check1" class="grupo" type="checkbox">
+        <input id="check2" class="grupo" type="checkbox">
+        <input id="check3" class="grupo" type="checkbox">
+    
+        <h2>3.Asociar dintintos eventos mediante .on()</h2>
+        <div id="ejercicio3" class="cuadro"><span>Holaaaaaaaaaa</span></div>
+    
+        <h2>4.Indica los eventos estándares en el DOM</h2>
+        <ul>
+            <li><b>DOMSubtreeModified</b>
+                Se produce cuando se añaden o eliminan nodos en el subárbol de un documento o
+                elemento</li>
+            <li><b>DOMNodeInserted</b>
+                Se produce cuando se añade un nodo como hijo de otro nodo</li>
+            <li><b>DOMNodeRemoved</b>
+                Se produce cuando se elimina un nodo que es hijo de otro nodo</li>
+            <li><b>DOMNodeRemovedFromDocument</b>
+                Se produce cuando se elimina un nodo del documento</li>
+            <li><b>DOMNodeInsertedIntoDocument</b>
+                Se produce cuando se añade un nodo al documento</li>
+        </ul>
+    
+        <h2>5.- Los atributos pageX, pageY, currentTarget, timeStamp... ¿A qué objeto pertenecen? Demuestra su uso</h2>
+        <p id="ejercicio5">Son implementados mediante la interfaz event.</p>
+    
+        <h2>6.- Diferencia entre .on(), .live(). bind() y .delegate()</h2>
+        <ul>
+            <li><b>on():</b>
+                Proporciona todas las funciones necesarias para adjuntar controladores de eventos.
+                Es la conversión de los 3 siguientes eventos que quedaron obsoletos.</li>
+            <li> <b>live():</b>
+                Igual a bind con la diferencia que asocia el evento a la raíz del DOM y podría llevar grandes
+                cargas si el DOM es demsaiado amplio.
+               <span id="cambios">Este método se encuentra deprecated desde la versión 1.7</span> </li>
+    
+            <li> <b>bind():</b>
+                <span id="cambios"></span>A partir de jQuery 3.0</span>, .bind() ha quedado en desuso. Permite asignar por defecto eventos a los diferentes elementos que tenemos en el DOM. 
+                </li>
+    
+            <li> <b>delegate():</b>
+                <span id="cambios">A partir de jQuery 3.0, .delegate() ha quedado en desuso.</span> 
+                Similar a live con la diferencia de que podemos asociar el evento a un selector en lugar de asociarlo al DOM
+                </li>
+        </ul>
+
+</body>
+</html>
