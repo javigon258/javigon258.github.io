@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+    background-color: #0074D9;
+}
+main, #contenedor{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    background-color: blue;
+    width: 45px;
+    height: 45px;
+    font-family: Arial;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+#reiniciar{
+    font-size: 25px;
+    transition: 2s;
+}
+#reiniciar:hover{
+    transition: 1s;
+    animation: 2s rotate infinite linear;
+}
+#iconos{
+    margin-bottom: 40px;
+}
+b{
+    font-size: 24px;
+    margin-left: 30px;    
+}
+h2{
+    position: absolute;
+    text-shadow: 2px 0 0 rgb(255, 255, 255), -2px 0 0 rgb(238, 235, 235), 
+    0 2px 0 rgb(255, 255, 255), 0 -2px 0 rgb(247, 240, 240), 1px 1px rgb(252, 247, 247);
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+@keyframes rotate { 
+    to { transform: rotate(360deg); } 
+} 
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
