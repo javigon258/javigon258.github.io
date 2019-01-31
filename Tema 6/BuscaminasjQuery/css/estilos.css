@@ -1,8 +1,7 @@
 body {
     text-align: center;
-    background-color: #0074D9;
 }
-main, #contenedor{
+main, .elegir{
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -10,14 +9,32 @@ main, #contenedor{
     align-items: center;
 }
 input {
-    background-color: blue;
+    background-color: rgb(5, 121, 254);
     width: 45px;
     height: 45px;
     font-family: Arial;
     text-align: center;
     color: white;
     font-size: 2em;
+    border: 0.5px solid white;
 }
+@keyframes flip {
+    0% {
+        transform: scale(1) rotateY(0);
+    }
+    25%{
+        transform: scale(1.5) rotateY(90);
+    }
+    50% {
+        transform: scale(2) rotateY(180deg);
+    }
+    75%{
+        transform: scale(1.5) rotateY(270deg);
+    }
+    100% {
+        transform: scale(1) rotateY(360deg);
+    }
+  }
 #reiniciar{
     font-size: 25px;
     transition: 2s;
@@ -26,12 +43,22 @@ input {
     transition: 1s;
     animation: 2s rotate infinite linear;
 }
-#iconos{
-    margin-bottom: 40px;
+#marcador{
+    border: 1px solid black;
+    display: flex;
+    padding: 10px 30px 10px 30px;
+    margin-bottom: 55px;
+    background-color: aquamarine;
 }
-b{
+#marcador i{
     font-size: 24px;
-    margin-left: 30px;    
+    margin-right: 15px;
+}
+#record{
+    color: yellow;
+}
+#banderas{
+    color: orange;
 }
 h2{
     position: absolute;
