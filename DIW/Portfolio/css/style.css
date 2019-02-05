@@ -268,6 +268,20 @@ article .descripcion{
       to(#45B375)
     );
   }
+  .sympony {
+    width: 10%;
+    -moz-animation: sympony 2s ease-in;
+    animation: sympony 2s ease-in;
+    background-color: #45B354;
+    background-image: gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgb(19, 32, 21)),
+      to(rgb(19, 131, 67))
+    );
+  }
+  
   @keyframes javascript {
     0% {
       width: 0px;
@@ -316,7 +330,15 @@ article .descripcion{
       width: 50%;
     }
   }
-
+  @keyframes sympony {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 10%;
+    }
+  }
+  
 .habilidades{
   background: url(../img/habilidades.jpg);
   background-size: cover;
