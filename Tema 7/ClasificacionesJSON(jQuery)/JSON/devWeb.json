@@ -1,0 +1,18 @@
+{
+  "Front-end": {
+    "HTML": "HyperText Markup Language, es el componente estructural clave de todas las webs de internet. Sin él las páginas web no pueden existir.",
+    "CSS": "Cascading Style Sheets, es lo que le proporciona estilo a HTML.",
+    "JavaScript": "Usando solo HTML y CSS tus webs serían páginas estáticas, con JS tus páginas web son interactivas."
+  },
+  "Back-end": {
+    "ASPNET": "es la plataforma de desarrollo web de Microsoft. Muy utilizada en las empresas. Tiene las variantes Web Forms y MVC, y ahora también ASP.NET Core MVC.",
+    "PHP": "por ejemplo, el famoso gestor de contenidos WordPress usa por detrás PHP. Laravel es uno de los frameworks usados con este lenguaje.",
+    "Ruby": "junto con su framework Ruby on rails.",
+    "Python": "fácil de aprender. Usado a menudo con Django como framework",
+    "Nodejs": "se está haciendo cada vez más popular debido a que usa el mismo lenguaje que en el lado cliente: JavaScript.",
+    "Java": "el lenguaje clásico y uno de los más demandados."
+  },
+  "Full stack": {
+    "arquitectura": "arquitectura del servidores y sistemas."
+  }
+}

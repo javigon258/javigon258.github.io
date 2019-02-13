@@ -1,0 +1,9 @@
+{
+  "Los 5 perfiles IT más demandados en las empresas españolas": {
+    "Arquitecto Big Data": "Gracias a sus conocimientos en programación (Spring, Javascript, Angular, R, Python, Spark) y en tecnologías Big Data (Cloudera, Hortonworks, Hadoop HDFS), este experto en tratamiento y análisis de grandes volúmenes de datos está especialmente indicado para proyectos de adaptación, configuración e implantación de plataformas Big Data.",
+    "Ingenieros DevOps senior": "Esta categoría profesional, ingenieros en Informática especializados en desarrollo de software (Dev) y operaciones (Ops), es de las más cotizadas en el mercado actual.",
+    "Consultor de Seguridad": "Sus principales funciones son la implantación y administración de productos de ciberseguridad, análisis de entornos IT y necesidades tecnológicas de los clientes, a la hora de resolver incidentes y servicios de seguridad.",
+    "Desarrollador web en entorno .NET": "Las empresas buscan perfiles con experiencia demostrada en el lenguaje de programación .NET, así como en C#. Dentro de este perfil, pueden distinguirse tres funciones distintas, de back-end, front-end y Full Stack (que incluye a ambas).",
+    "Tester QA": "Lo tester QA se dedican a realizar pruebas de software, principalmente automáticas y funcionales (ALM, Jmeter Selenium, QTP- HP UFT)."
+  }
+}
