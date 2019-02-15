@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AJAX con jQuery. Preguntas</title>
+<style>
+    ul li{
+        list-style-type:decimal;
+    }
+</style>
 </head>
+
 <body>
     <noscript>
         Mensaje que deberia mostraria si el navegador no es compatible con javascript.
@@ -13,7 +19,7 @@
     <h1>AJAX con jQuery. Preguntas</h1>
     <ul>
         <li><h3>El método ajaxSetup() establece los valores por defecto en las peticiones Ajax. Indica por qué su uso no está recomendado.</h3></li>
-        <p id="li1"></p>
+
         <li><h3>Indica los 6 manejadores de eventos globales de AJAX.</h3></li>
         <p><b>.ajaxComplete(),</b>Registra un controlador para que se llame cuando se completen las solicitudes de Ajax.</p>
         <p><b>.ajaxError(),</b>Registra un controlador para que se llame cuando Ajax solicite un error. Este es un evento de Ajax.</p>
@@ -22,7 +28,7 @@
         <p><b>.ajaxStop(),</b>Registra un controlador para que se llame cuando todas las solicitudes de Ajax se hayan completado. Este es un evento de Ajax.</p>
         <p><b>.ajaxSuccess(),</b>Añade una función para que se ejecute cada vez que una solicitud Ajax se complete con éxito. Este es un evento de Ajax.</p>
         <li><h3>Indica al objeto al que han de estar asociados los métodos anteriores.</h3></li>
-        <p id="li3">Al objeto DOM que se especifique o AJAX.</p>
+        <p>Al objeto DOM que se especifique o AJAX.</p>
         <li><h3>Los métodos AJAX abreviados son 5. Indica cuáles son y utilidad de cada uno.</h3></li>
         <p><b>.get(),</b>Carga los dato del servidor usando una solicitud HTTP GET.</p>
         <code>
