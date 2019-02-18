@@ -1,0 +1,11 @@
+form{
+    padding: 20px;
+}
+.formulario{
+    width: 35%;
+    border: 1px solid #000;
+    align-items: center;
+}
+input, label{
+    margin-bottom: 10px;
+}
