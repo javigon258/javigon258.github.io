@@ -1,0 +1,14 @@
+body {
+  margin: 20px;
+}
+.animate {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  width: 200px;
+  padding: 7px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  background-color: green;
+}

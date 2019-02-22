@@ -1,34 +1,14 @@
 {
   let init = function () {
-    $( "#go1" ).click(function() {
-      $( "#block1" )
-        .animate({
-          width: "90%"
-        }, {
-          queue: false,
-          duration: 3000
-        })
-        .animate({ fontSize: "24px" }, 1500 )
-        .animate({ borderRightWidth: "15px" }, 1500 );
+    $( "#prim" ).animate({
+      left: "250px",
+      opacity: .5,
+      queue: false
     });
-     
-    $( "#go2" ).click(function() {
-      $( "#block2" )
-        .animate({ width: "90%" }, 1000 )
-        .animate({ fontSize: "24px" }, 1000 )
-        .animate({ borderLeftWidth: "15px" }, 1000 );
-    });
-     
-    $( "#go3" ).click(function() {
-      $( "#go1" ).add( "#go2" ).click();
-    });
-     
-    $( "#go4" ).click(function() {
-      $( "div" ).css({
-        width: "",
-        fontSize: "",
-        borderWidth: ""
-      });
+    $( "#otro" ).animate({
+      left: "250px",
+      opacity: .5,
+      queue: true
     });
   }
   $(init)
