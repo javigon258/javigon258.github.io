@@ -1,16 +1,16 @@
-$(function () {
+(function () {
 
-    jQuery.fn.formularioValidar = function () {
+    $.fn.formularioValidar = function () {
         let formulario = {
             nombre: [/^([a-zA-Z]{5,}\s?)$/, "El valor minimo debe tener 5 caracteres."],
             apellidos: [/^([a-zA-Z]{5,}\s?){1,5}$/,"El valor minimo de 5 caracteres, y un apellido."],
             email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
-            mensaje: [/^^.{10,}$/, "El contenido del mensaje debe tener al menos 10 caracteres como minimo."],
+            mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
             valida(texto, expresion) {
                 return formulario[expresion][0].test(texto);
-            },
+            }
         }  
-        let $valores = $("input[type=text], textarea");
+        let $valores = $("input[type=text]", $(this));
         let errInput = [];
 
         $valores.blur(function (e){
@@ -33,14 +33,30 @@ $(function () {
             }
         });
 
-        $valores.focus(function (e) { 
-            e.preventDefault();
+        $valores.focus(function () { 
             $(this).css({
                 color: "black",
                 border: "2px solid #ffDEDE"
             });
         });
 
+        $(this).submit(function(e){
+            e.preventDefault();
+            errInput = [];
+            let $inputs = $valores;
+            $inputs.blur();
+            //console.log(errInput);
+            if(errInput.length>0)
+                errInput[0].focus();
+            $.ajax({
+                url: "./js/datos.txt",
+                dataType: "text",
+                success: function (response) {
+                    $("textarea").val(response);
+                }
+            });
+        });
+/**
         $("input[type=submit]").click(function (e) {
             e.preventDefault();
             errInput = [];
@@ -56,7 +72,8 @@ $(function () {
                     $("textarea").val(response);
                 }
             });
-        });
+        }); */
+
         return this;
-    }(jQuery);
-});
+    }
+}(jQuery));
