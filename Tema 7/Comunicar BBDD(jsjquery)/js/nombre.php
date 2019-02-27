@@ -10,7 +10,6 @@ header('Content-Type: text/html; charset=utf-8');
 
     $input = strtolower($_GET["input"]);
     
-    $lInput = strlen($input);
     $mensaje = "";
 
     if($input !== ""){
