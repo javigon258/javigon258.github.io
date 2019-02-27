@@ -4,14 +4,14 @@
   }
   
   let consulta2 = function() {
-    $("#busqueda").blur(function() {
+    $("#busqueda").keyup(function() {
       let keywords = $('#busqueda').val();
         if(keywords.length == 0) {
           $("#resultadoBusqueda").text("");	
         }
         $.get({
           url: "./js/nombre.php",
-          data: { keywords: keywords },
+          data: { input: keywords },
           cache: "false",
           success: function(resultado) {
             $("#resultadoBusqueda").text(resultado);

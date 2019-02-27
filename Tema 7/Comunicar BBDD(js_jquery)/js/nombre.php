@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
+
     $nombres = [
         "Javier Gonzalez","Jose Rafa Alvarez", "Mario Navarro", 
         "Fran Ramirez", "Marcos Gallardo", "Angelo Barbara",
@@ -6,20 +8,15 @@
         "Suso Mejias", "Jose Manuel Bravo", "Chema Romero"
     ];
 
-    $input = strtolower($_REQUEST["input"]);
-    echo $input;
+    $input = strtolower($_GET["input"]);
     
-    $lInput = strlen($valorInput);
+    $lInput = strlen($input);
     $mensaje = "";
 
     if($input !== ""){
         foreach ($nombres as $alumno) {
-            if (stristr($input, substr($alumno, 0, $lInput))) {
-                if ($mensaje === "") {
-                    $mensaje = "$alumno";
-                } else {
-                    $mensaje .= ", $alumno";
-                }
+            if(preg_match("/".$input."/i",$alumno)){
+                $mensaje .= ", $alumno ";
             }
         }
     }

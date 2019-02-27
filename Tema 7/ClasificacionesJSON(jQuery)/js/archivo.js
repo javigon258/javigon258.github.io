@@ -16,24 +16,25 @@
         let mensaje = '';
         $.getJSON("JSON/"+arch+".json", function(data) {
             $.each(data, function(i, f) {
-                mensaje += '<p><b>'+i+'</b>: ';
+                let cont = 0;
+                mensaje += `<select id='select_opt"'>` ;
+                let value = $("#select_opt").val();
                 $.each(f, function (indice, valor) {
-                    mensaje += '<p><b>'+indice+'</b>, '+valor+'</p>';
+                    mensaje += `<option value='${cont}' class='mostrar'>`+indice+`</option>`;
+
+                    /*if(value){
+                        mensaje += `<option value='${cont}' class='mostrar'>`+indice+`</option>`;
+                        $(".resul").html(valor);
+                    }else{
+                        mensaje += `<option value='${cont}' class='ocultar'>`+indice+`</option>`;
+                        $(".resul").html(valor);
+                    }*/
+                    cont++;
+                    $(".resul").html(valor);
                 })
+                mensaje += '</select>';
             });
         $(".datosJSON").html(mensaje);
-   /*let mensaje = '';
-        $.each(data.person, function(i, f) {
-            if(f.habilidad && f.descripcion){
-                mensaje += '<p><b>'+f.habilidad+'</b>'+f.descripcion+'</p>'
-            }
-           //let result = "<tr>" + "<td>" + f.firstName + "</td>" +
-           // "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
-      });
-
-      $(".datosJSON").html(mensaje);*/
-        
-    
         });
     }
     $(init)
