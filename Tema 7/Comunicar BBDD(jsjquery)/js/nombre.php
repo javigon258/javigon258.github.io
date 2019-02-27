@@ -1,5 +1,6 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+    header('Content-Type: text/html; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
 
     $nombres = [
         "Javier Gonzalez","Jose Rafa Alvarez", "Mario Navarro", 
