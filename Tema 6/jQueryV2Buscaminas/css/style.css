@@ -1,0 +1,70 @@
+body {
+    text-align: center;
+}
+main{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.casilla {
+    background-color: rgb(5, 121, 254);
+    width: 45px;
+    height: 45px;
+    font-family: Arial;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    border: 1px solid black;
+}
+#elegir{
+    display: flex;
+    width: 100vh;
+    border: 1px solid black;
+}
+.marcador{
+    border: 1px solid black;
+    display: flex;
+    padding: 10px 30px 10px 30px;
+    margin-bottom: 15px;
+    background-color: rgb(4, 87, 0);
+}
+.marcador img{
+    width: 10vh;
+    height: 30px;
+}
+#eleccion,.seleccion{
+    display: flex;
+    width: 60vh;
+    flex-direction: row;
+    *justify-content: space-between;
+    justify-content: center;
+}
+select{
+    width: 25vh;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+#reiniciar{
+    transition: 0.3s ease-in-out;
+    background-color: wheat;
+}
+#reiniciar:hover{
+    transition: 0.3s ease-in-out;
+    animation: rotate 2s linear infinite;
+    
+}
+@keyframes rotate{
+    to{ transform: rotate(-360deg); }
+}
+#eleccion input[type=button]{
+    border-radius: 20px;
+    padding: 0 20px;
+    width: 25vh;
+    height: 30px;
+    font-size: 20px;
+}
+

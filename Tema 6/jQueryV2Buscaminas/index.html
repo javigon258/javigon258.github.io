@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/jQueryTablero.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <main>
+        <noscript>
+            Mensaje que deberia mostraria si el navegador no es compatible con javascript.
+        </noscript>
+
+        <h1>BuscaminasJQuery</h1>
+    <div id="elegir">
+        <div class="marcador">
+            <a href=""><img src="image/reload.svg" id="reiniciar" alt="reiniciar"></a> 
+            <img src="image/flag.svg" alt="flag">
+            <img src="image/winner.svg" alt="record">
+        </div>
+        
+        <div class="seleccion">
+            <select name="dificultad" id="dificultad">
+                <option>Elegir el nivel</option>
+                <option value="facil">Fácil</option>
+                <option value="medio">Medio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+    </div>
+        <div id="tableroJuego"></div>
+        <!--<h2></h2>-->
+    </main>
+</body>
+</html>
+
