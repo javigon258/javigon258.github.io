@@ -10,7 +10,7 @@
           $("#resultadoBusqueda").text("");	
         }
         $.get({
-          url: "./js/nombre.php",
+          url: "http://cpd.iesgrancapitan.org:9119/~qgguja/php/nombre.php",
           data: { input: keywords },
           cache: "false",
           success: function(resultado) {
