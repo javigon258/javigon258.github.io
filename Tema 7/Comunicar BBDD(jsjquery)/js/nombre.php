@@ -16,7 +16,7 @@
     if($input !== ""){
         foreach ($nombres as $alumno) {
             if(preg_match("/".$input."/i",$alumno)){
-                $mensaje .= ", $alumno ";
+                $mensaje .= "$alumno <br>";
             }
         }
     }
