@@ -2,12 +2,15 @@ let buscaminas = {
     tableroDeJuego: [],
     tableroSolucion: [],
     tableroPulsadas: [],
+    pulsadasC: [],
 
     nivel: "",
     tableroCasillaAlmacenado: [],
+    casillaC: new Set(),
+    ganar: false,
 
     filas: 0, columnas: 0,
-    minas: 0, banderas: 0,
+    minas: 0, banderas: 0,    
 
     init(){
         buscaminas.generaTableros();
@@ -45,17 +48,19 @@ let buscaminas = {
         }
     },
     picar(x, y){
-        try {
-           /* if(buscaminas.tableroSolucion[x][y] === "x"){
-                return false;
-            }*/
+        if(buscaminas.tableroSolucion[x][y] === "m"){
+            throw new Error("Perdedor");
+        
+        }
+        if(buscaminas.ganar)
+            return true;
+        
             buscaminas.descubrirCasillas(x,y);
             buscaminas.tableroPulsadas[x][y] = "pul";
             buscaminas.tableroCasillaAlmacenado.push(x +"-"+ y);
+            buscaminas.pulsadasC.push(x +"-"+ y);
             buscaminas.actualizaTablero();
-        } catch (err) {
-            console.error(err.message);
-        }
+            buscaminas.compruebaVictoria();
     },
     generaTableros(){
         for (let i = 0; i < buscaminas.filas; i++) {
@@ -73,6 +78,7 @@ let buscaminas = {
         }
     },
     generaMinas() {
+        
         for (let i = 0; i < buscaminas.minas; i++) {
             let fila = Math.floor(Math.random() * (buscaminas.filas - 1 - 0)) + 0;
             let columna = Math.floor(Math.random() * (buscaminas.columnas - 1 - 0)) + 0;
@@ -103,17 +109,202 @@ let buscaminas = {
                     for (let j = Math.max(y - 1, 0); j <= Math.min(y + 1, buscaminas.columnas - 1); j++) {
                         buscaminas.tableroPulsadas[x][y] = "pul";
                         buscaminas.tableroCasillaAlmacenado.push(i + "-" + j);
+                        buscaminas.pulsadasC.push(x +"-"+ y);
                         buscaminas.descubrirCasillas(i, j);
                     }
                 }    
             }
         }
     },
-    marcar(){
+    marcar(x, y){
         try {
-            
+            if(buscaminas.tableroDeJuego[x][y] == "B"){
+                buscaminas.tableroDeJuego[x][y] = "";
+            }else{
+                buscaminas.tableroDeJuego[x][y] = "B";
+            }
         } catch (error) {
-            
+            console.log(error.message);
         }
+    },
+    contarCasillas(){
+        let conta = 0;
+        for (let i = 0; i < buscaminas.filas; i++){
+            for (let j = 0; j < buscaminas.columnas; j++){
+                if (buscaminas.tableroPulsadas[i][j] === "pul")
+                    conta++;
+            } 
+        } 
+        return conta;
+    },
+
+    despejar(x, y){
+
+        //Limpio el mapeado de las casillas contiguas ( papardeo )
+        buscaminas.casillaC.clear();
+
+        if (buscaminas.cuentaBanderas(x, y) === buscaminas.tableroSolucion[x][y]) {
+
+            if (x > 0 && y > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y - 1] !== "pul")
+
+                    buscaminas.picar(x - 1, y - 1);
+            }
+
+            if (y > 0) {
+                if (buscaminas.tableroDeJuego[x][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x][y - 1] !== "pul")
+                    buscaminas.picar(x, y - 1);
+            }
+
+            if (y > 0 && x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y - 1] !== "pul")
+                    buscaminas.picar(x + 1, y - 1);
+            }
+
+            if (x > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y] !== "pul")
+                    buscaminas.picar(x - 1, y);
+            }
+
+            if (x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y] !== "pul")
+                    buscaminas.picar(x + 1, y);
+            }
+
+            if (y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x][y + 1] !== "pul")
+                    buscaminas.picar(x, y + 1);
+            }
+
+            if (x < buscaminas.filas - 1 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y + 1] !== "pul")
+                    buscaminas.picar(x + 1, y + 1);
+            }
+
+            if (x > 0 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x - 1][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y + 1] !== "pul")
+                    buscaminas.picar(x - 1, y + 1);
+            }
+            //AÑADO AL MAP LAS CASILLAS CONTIGUAS
+        } else {
+
+            if (x > 0 && y > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y - 1] !== "pul")
+                    buscaminas.casillaC.add((x - 1) + "-" + (y - 1));
+            }
+
+            if (y > 0) {
+                if (buscaminas.tableroDeJuego[x][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x][y - 1] !== "pul")
+                    buscaminas.casillaC.add((x) + "-" + (y - 1));
+            }
+
+            if (y > 0 && x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y - 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y - 1] !== "pul")
+                    buscaminas.casillaC.add((x + 1) + "-" + (y - 1));
+            }
+
+            if (x > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y] !== "pul")
+                    buscaminas.casillaC.add((x - 1) + "-" + (y));
+            }
+
+            if (x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y] !== "pul")
+                    buscaminas.casillaC.add((x + 1) + "-" + (y));
+            }
+
+            if (y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x][y + 1] !== "pul")
+                    buscaminas.casillaC.add((x) + "-" + (y + 1));
+            }
+
+            if (x < buscaminas.filas -1 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x + 1][y + 1] !== "pul")
+                    buscaminas.casillaC.add((x + 1) + "-" + (y + 1));
+            }
+
+            if (x > 0 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x - 1][y + 1] !== "B" &&
+                    buscaminas.tableroPulsadas[x - 1][y + 1] !== "pul")
+                    buscaminas.casillaC.add((x - 1) + "-" + (y + 1));
+            }
+        }
+    },
+    compruebaVictoria(){
+        if(buscaminas.contarCasillas() === buscaminas.contarCasillasVictorias()){
+            buscaminas.ganar = true;
+            throw new Error ("Ganador");
+        }
+    },
+    contarCasillasVictorias(){
+        let cont = 0;
+        for (let i = 0; i < buscaminas.filas; i++){
+            for (let j = 0; j < buscaminas.columnas; j++){
+                if (buscaminas.tableroSolucion[i][j] !== "m")
+                cont++;
+            } 
+        } 
+        return cont;
+    },
+    cuentaBanderas(x, y){
+        let nBanderas = 0;
+        if (buscaminas.tableroPulsadas[x][y] === "pul") {
+            if (x > 0 && y > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y - 1] === "B")
+                    nBanderas++;
+            }
+
+            if (y > 0) {
+                if (buscaminas.tableroDeJuego[x][y - 1] === "B")
+                    nBanderas++;
+            }
+
+            if (y > 0 && x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y - 1] === "B")
+                    nBanderas++;
+            }
+
+            if (x > 0) {
+                if (buscaminas.tableroDeJuego[x - 1][y] === "B")
+                    nBanderas++;
+            }
+
+            if (x < buscaminas.filas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y] === "B")
+                    nBanderas++;
+            }
+
+            if (y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x][y + 1] === "B")
+                    nBanderas++;
+            }
+
+            if (x < buscaminas.filas - 1 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x + 1][y + 1] === "B")
+                    nBanderas++;
+            }
+
+            if (x > 0 && y < buscaminas.columnas - 1) {
+                if (buscaminas.tableroDeJuego[x - 1][y + 1] === "B")
+                    nBanderas++;
+            }
+        }
+        return nBanderas;
     }
+
 }
