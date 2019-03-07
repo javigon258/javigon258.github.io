@@ -2,7 +2,7 @@
 
     $.fn.formularioValidar = function () {
         let examen = {
-            nombre: [/^([a-zA-Z]{5,}\s?)$/, "El valor minimo debe tener 5 caracteres."],
+            nombre: [/^([a-zA-Z]{3,}\s?)$/, "El valor minimo debe tener 3 caracteres."],
             email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
             mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
             valida(texto, expresion) {
