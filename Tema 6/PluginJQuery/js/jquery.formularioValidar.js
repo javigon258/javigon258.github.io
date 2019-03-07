@@ -1,12 +1,12 @@
 (function () {
 
     $.fn.formularioValidar = function () {
-        let formulario = {
+        let examen = {
             nombre: [/^([a-zA-Z]{5,}\s?)$/, "El valor minimo debe tener 5 caracteres."],
             email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
             mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
             valida(texto, expresion) {
-                return formulario[expresion][0].test(texto);
+                return examen[expresion][0].test(texto);
             }
         }  
         let $valores = $("input[type=text]", $(this));
@@ -16,7 +16,7 @@
             e.preventDefault();
             let inputPatron = $(this).attr("tipo");
             let valorForm = $(this).val();
-            if(formulario.valida(valorForm, inputPatron)){
+            if(examen.valida(valorForm, inputPatron)){
                 $(this).css({
                     "background-color": "#b3f29f",
                     color: "#32771d",
