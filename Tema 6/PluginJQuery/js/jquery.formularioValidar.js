@@ -3,7 +3,6 @@
     $.fn.formularioValidar = function () {
         let formulario = {
             nombre: [/^([a-zA-Z]{5,}\s?)$/, "El valor minimo debe tener 5 caracteres."],
-            apellidos: [/^([a-zA-Z]{5,}\s?){1,5}$/,"El valor minimo de 5 caracteres, y un apellido."],
             email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
             mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
             valida(texto, expresion) {
@@ -45,7 +44,6 @@
             errInput = [];
             let $inputs = $valores;
             $inputs.blur();
-            //console.log(errInput);
             if(errInput.length>0)
                 errInput[0].focus();
             $.ajax({
@@ -56,24 +54,7 @@
                 }
             });
         });
-/**
-        $("input[type=submit]").click(function (e) {
-            e.preventDefault();
-            errInput = [];
-            let $inputs = $valores;
-            $inputs.blur();
-            //console.log(errInput);
-            if(errInput.length>0)
-                errInput[0].focus();
-            $.ajax({
-                url: "datos.txt",
-                dataType: "text",
-                success: function (response) {
-                    $("textarea").val(response);
-                }
-            });
-        }); */
 
-        return this;
+        return $(this);
     }
 }(jQuery));
