@@ -1,9 +1,6 @@
 {
-  let $tableroJuego;
-let $fila;
-let $columna;
+let $tableroJuego;
 let $finalizada = false;
-cont = 0;
 
 let funciones = function() {
   $("#dificultad").change(interfazBuscaminas.comenzar);
@@ -12,10 +9,10 @@ let funciones = function() {
 };
 
 let interfazBuscaminas = {
+
   comenzar() {
     buscaminas.elegirNivel($(this).val());
     buscaminas.init();
-    buscaminas.mostrar();
     $("#dificultad").hide();
     interfazBuscaminas.generarTablero();
     interfazBuscaminas.eliminaMenuContextual();
@@ -27,7 +24,6 @@ let interfazBuscaminas = {
   },
 
   generarTablero() {
-    console.log(buscaminas.columnas());
     $tableroJuego.css({
       display: "grid",
       "grid-template-columns": "repeat(" + buscaminas.columnas() + " ,0.5fr)",
@@ -37,29 +33,34 @@ let interfazBuscaminas = {
       for (let j = 0; j < buscaminas.columnas(); j++) {
         let $caja = $(`<div class="casilla" id='${i}-${j}'></div>`);
 
-        $caja.click(function() {
-          interfazBuscaminas.picar(i, j);
-        });
-        $caja.mousedown(function(ev) {
-          interfazBuscaminas.marcarBandera(ev, i, j);
-        });
-        $caja.mousedown(function(ev) {
-          interfazBuscaminas.despejar(ev, i, j);
+        $caja.mousedown(function (event) {
+          interfazBuscaminas.compruebaClick(event, i, j);
         });
         $tableroJuego.append($caja);
       }
     }
     $caja = $("div");
   },
+  compruebaClick(event, x, y){
+      switch(event.buttons){
+        case 1:
+          interfazBuscaminas.picar(x, y);
+          break;
+        case 2:
+          interfazBuscaminas.marcarBandera(x, y);
+          break;
+        case 3:
+          interfazBuscaminas.despejar(x, y);
+          break;
+      }
+  },
   picar(x, y) {
     try {
-      if ($finalizada == false) {
         if (buscaminas.tableroDeJuego[x][y] == "B") {
           return false;
         }
         buscaminas.picar(x, y);
         interfazBuscaminas.actualizaTablero();
-      }
     } catch (error) {
       interfazBuscaminas.descubrirMina();
       interfazBuscaminas.actualizaTablero();
@@ -79,10 +80,9 @@ let interfazBuscaminas = {
       });
     }
   },
-  marcarBandera(e, x, y) {
-    if ($finalizada == false) {
+  
+  marcarBandera(x, y) {
       if (buscaminas.tableroPulsadas[x][y] !== "pul") {
-        if (e.buttons == 2) {
           let $valor = $("#" + x + "-" + y);
           buscaminas.marcar(x, y);
           if (buscaminas.tableroDeJuego[x][y] == "")
@@ -94,14 +94,12 @@ let interfazBuscaminas = {
               "background-color": "yellow"
             });
           }
-        }
+        
       }
-    }
+    
   },
-  despejar(e, x, y) {
-    if ($finalizada == false) {
+  despejar(x, y) {
       try {
-        if (e.buttons == 3) {
           buscaminas.despejar(x, y);
           interfazBuscaminas.actualizaTablero();
           if (buscaminas.casillaC.size > 0) {
@@ -112,7 +110,7 @@ let interfazBuscaminas = {
                 });
             }
           }
-        }
+        
       } catch (error) {
         interfazBuscaminas.descubrirMina();
         interfazBuscaminas.actualizaTablero();
@@ -121,7 +119,7 @@ let interfazBuscaminas = {
           .text(error.message)
           .show();
       }
-    }
+    
   },
   descubrirMina() {
     //$("#mensajeFinal").text("Has Perdido").show("slow");
@@ -140,10 +138,7 @@ let interfazBuscaminas = {
                 "transition-duration": "1s"
               });
             }, cont);
-            $("div").prop("disabled", true);
-            $("div")
-              .prop("click", null)
-              .off("click");
+            $('.casilla').off();
           } else {
             cont += 150;
             setTimeout(function() {
@@ -153,10 +148,7 @@ let interfazBuscaminas = {
                 "transition-duration": "1s"
               }).fadeIn( "slow", 0.33 );
             }, cont);
-            $("div").prop("disabled", true);
-            $("div")
-              .prop("click", null)
-              .off("click");
+            $('.casilla').off();
           }
         }
       }
