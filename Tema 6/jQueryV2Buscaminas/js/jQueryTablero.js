@@ -1,4 +1,5 @@
-let $tableroJuego;
+{
+  let $tableroJuego;
 let $fila;
 let $columna;
 let $finalizada = false;
@@ -26,13 +27,14 @@ let interfazBuscaminas = {
   },
 
   generarTablero() {
+    console.log(buscaminas.columnas());
     $tableroJuego.css({
       display: "grid",
-      "grid-template-columns": "repeat(" + buscaminas.columnas + " ,0.5fr)",
+      "grid-template-columns": "repeat(" + buscaminas.columnas() + " ,0.5fr)",
       "grid-gap": "2px"
     });
-    for (let i = 0; i < buscaminas.filas; i++) {
-      for (let j = 0; j < buscaminas.columnas; j++) {
+    for (let i = 0; i < buscaminas.filas(); i++) {
+      for (let j = 0; j < buscaminas.columnas(); j++) {
         let $caja = $(`<div class="casilla" id='${i}-${j}'></div>`);
 
         $caja.click(function() {
@@ -125,8 +127,8 @@ let interfazBuscaminas = {
     //$("#mensajeFinal").text("Has Perdido").show("slow");
     $finalizada = true;
     let cont = 0;
-    for (let i = 0; i < buscaminas.filas; i++) {
-      for (let j = 0; j < buscaminas.columnas; j++) {
+    for (let i = 0; i < buscaminas.filas(); i++) {
+      for (let j = 0; j < buscaminas.columnas(); j++) {
         let $id = $("#" + i + "-" + j);
 
         if (buscaminas.tableroSolucion[i][j] === "m") {
@@ -162,3 +164,4 @@ let interfazBuscaminas = {
   }
 };
 $(funciones);
+}
