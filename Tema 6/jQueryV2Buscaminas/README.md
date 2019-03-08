@@ -1,11 +1,17 @@
-#######Buscaminas con Jquery
+#Buscaminas con Jquery
 ----
-#1. Seleccionar el nivel 
+
+Para jugar [Buscaminas con jQuery](https://javigon258.github.io/Tema%206/jQueryV2Buscaminas/)
+
+**********
+
+1. Seleccionar el nivel 
 
 Tienes la opcion de elegir la dificultad del Buscaminas
 
-#2. A la hora de jugar, hay tres opciones diferentes:
-##Con el boton izquierdo
+**********
+
+2. A la hora de jugar, hay tres opciones diferentes:Con el boton izquierdo
 Picas, y te desvalan las casillas.
 ##Con el boton derecho 
 Marcas con banderas las posibles minas.
