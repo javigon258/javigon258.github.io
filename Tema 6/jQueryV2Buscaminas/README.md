@@ -30,10 +30,10 @@ Consigues despejar casillas mas rapido, si no hubiese minas alrededor, y hubiese
 **********
 
 3. Y pierdes si pulsas alguna casilla que tenga una mina o ganas si consigues despejar todo el tablero.
-
+----
 4. Efectos:
 ### A la hora de despejar hago uso de efectos jquery, fadein y fade out para marcar las posibles minas.
 [Efecto mina cercana](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L108)
 
 ### Y cuando pierde o gana muestra un cartel que de arriba a abajo
-[](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L67)
+[Cartel de victoria o derrota](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L67)
