@@ -25,3 +25,7 @@ Marcas con banderas las posibles minas.
 
 Consigues despejar casillas mas rapido, si no hubiese minas alrededor, y hubiese minas cercanas aparecerian y desaparecerian donde pueden estar la minas.
 
+**********
+
+3. Y pierdes si pulsas alguna casilla que tenga una mina o ganas si consigues despejar todo el tablero.
+
