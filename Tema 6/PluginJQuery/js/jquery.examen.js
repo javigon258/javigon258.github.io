@@ -1,23 +1,23 @@
-(function () {
-
-    let patrones = {
-        nombre: [/^([a-zA-Z]{3,}\s?)$/, "El valor minimo debe tener 3 caracteres."],
-        email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
-        mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
-
-    }  
-    let tester = {
-        valida(texto, expresion) {
-            return patrones[expresion][0].test(texto);
-        }            
-    }
+(function ($) {
 
     $.fn.examen = function (resalto2) {
 
+        let patrones = {
+            nombre: [/^([a-zA-Z]{3,}\s?)$/, "El valor minimo debe tener 3 caracteres."],
+            email: [/^[a-zA-Zñ]{1,10}([.][a-zA-Zñ]{1,10}){0,3}[@][a-z]{1,6}([\.][a-z]{1,4}){1,4}$/, "Un ejemplo de correo: ejemplo@gmail.com"],
+            mensaje: [/^^.{20,}$/, "El contenido del mensaje debe tener 20 caracteres como minimo."],
+    
+        }  
+        let tester = {
+            valida(texto, expresion) {
+                return patrones[expresion][0].test(texto);
+            }            
+        }
+
         let resalto = {
             color: "#ff0000",
-            "background-color": "#ff0000",
-            border: "2px solid #ff0000"
+            "background-color": "#ffDEDE",
+            border: "2px solid #ffD3D7"
           };
       
       $.extend(resalto, resalto2);
