@@ -8,15 +8,16 @@
       let keywords = $('#busqueda').val();
         if(keywords.length == 0) {
           $("#resultadoBusqueda").text("");	
+        }else{
+          $.get({
+            url: "./js/nombre.php",
+            data: { keywords: keywords },
+            cache: "false",
+            success: function(resultado) {
+              $("#resultadoBusqueda").text(resultado);
+            }
+          });
         }
-        $.get({
-          url: "http://cpd.iesgrancapitan.org:9119/~qgguja/php/nombre.php",
-          data: { input: keywords },
-          cache: "false",
-          success: function(resultado) {
-            $("#resultadoBusqueda").text(resultado);
-          }
-        });
     });
 
   }
