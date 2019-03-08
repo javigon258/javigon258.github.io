@@ -15,6 +15,7 @@ let interfazBuscaminas = {
     buscaminas.elegirNivel($(this).val());
     buscaminas.init();
     buscaminas.mostrar();
+    $("#dificultad").hide();
     interfazBuscaminas.generarTablero();
     interfazBuscaminas.eliminaMenuContextual();
   },
@@ -60,9 +61,7 @@ let interfazBuscaminas = {
     } catch (error) {
       interfazBuscaminas.descubrirMina();
       interfazBuscaminas.actualizaTablero();
-      $("#mensajeFinal")
-        .text(error.message)
-        .show();
+      $("#mensajeFinal").text(error.message).slideDown( "slow" );
     }
   },
   actualizaTablero() {
@@ -106,8 +105,7 @@ let interfazBuscaminas = {
           if (buscaminas.casillaC.size > 0) {
             for (const coordenada of buscaminas.casillaC) {
               $("#" + coordenada)
-                .css({})
-                .fadeOut(200, function() {
+                .css({}).fadeOut(200, function() {
                   $("#" + coordenada).fadeIn(200);
                 });
             }
@@ -151,7 +149,7 @@ let interfazBuscaminas = {
                 "background-color": "red",
                 transform: "rotateY(360deg)",
                 "transition-duration": "1s"
-              });
+              }).fadeIn( "slow", 0.33 );
             }, cont);
             $("div").prop("disabled", true);
             $("div")
