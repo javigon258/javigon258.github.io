@@ -115,14 +115,14 @@ let interfazBuscaminas = {
         interfazBuscaminas.descubrirMina();
         interfazBuscaminas.actualizaTablero();
 
-        $("#mensajeFinal")
-          .text(error.message)
-          .show();
+        $("#mensajeFinal").text(error.message).css({
+          "background-color":"green"
+        }).slideDown( "slow" );
+
       }
     
   },
   descubrirMina() {
-    //$("#mensajeFinal").text("Has Perdido").show("slow");
     $finalizada = true;
     let cont = 0;
     for (let i = 0; i < buscaminas.filas(); i++) {
