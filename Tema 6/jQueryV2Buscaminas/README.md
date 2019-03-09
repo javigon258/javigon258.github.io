@@ -36,4 +36,8 @@ Consigues despejar casillas mas rapido, si no hubiese minas alrededor, y hubiese
 [Efecto mina cercana](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L108)
 
 ### Y cuando pierde o gana muestra un cartel que de arriba a abajo
-[Cartel de victoria o derrota](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L67)
+[Cartel de derrota](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L67)
+#### <img src="image/perder.jpg">
+
+[Cartel de victoria](.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L118)
+#### <img src="image/ganar.jpg">
