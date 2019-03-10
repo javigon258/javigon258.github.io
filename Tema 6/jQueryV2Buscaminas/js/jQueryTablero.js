@@ -116,8 +116,7 @@ let interfazBuscaminas = {
         interfazBuscaminas.actualizaTablero();
 
         $("#mensajeFinal").text(error.message).css({
-          "background-color":"green"
-        }).slideDown( "slow" );
+          "background-color":"green"}).slideDown( "slow" );
 
       }
     
