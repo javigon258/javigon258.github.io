@@ -18,6 +18,7 @@ Para jugar [Buscaminas con jQuery](https://javigon258.github.io/Tema%206/jQueryV
 [Como se hace el picar](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L57).  Picas, y te desvalan las casillas.
 
 
+
 ## Con el boton derecho 
 
 [Como marcar banderas](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L84). Marcas con banderas las posibles minas.
@@ -35,7 +36,18 @@ Consigues despejar casillas mas rapido, si no hubiese minas alrededor, y hubiese
 ### A la hora de despejar hago uso de efectos jquery, fadein y fade out para marcar las posibles minas.
 [Efecto mina cercana](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L108)
 
+```
+$("#" + coordenada)
+.css({}).fadeOut(200, function() {
+    $("#" + coordenada).fadeIn(200);
+});
+```
+
 ### Y cuando pierde o gana muestra un cartel que de arriba a abajo
+ ```
+ $("#mensajeFinal").text(error.message).slideDown( "slow" );
+ ```
+
 [Cartel de derrota](https://github.com/javigon258/javigon258.github.io/blob/master/Tema%206/jQueryV2Buscaminas/js/jQueryTablero.js#L67)
 #### <img src="image/perder.jpg">
 
