@@ -7,10 +7,10 @@ const Contacto = () => {
 	const [correo, setCorreo] = useState('');
 	const [mensaje, setMensaje] = useState('');
 	const [error, setError] = useState(null);
-	const [placeholderCorreo, setPlaceholderCorreo] = useState("Antonio@gmail.com");
+	const [placeholderCorreo, setPlaceholderCorreo] = useState("Javier@gonzalez.com");
 	const [animandoPlaceholder, setAnimandoPlaceholder] = useState(false);
 
-	const correoFalso = "Antonio@ruiz.com";
+	const correoFalso = "Javier@gonzalez.com";
     const timeoutRef = useRef(null);
 
 	const regEx = {
@@ -106,7 +106,7 @@ const Contacto = () => {
                             type="text"
                             name="nombre"
                             id="nombre"
-                            placeholder="Antonio Ruiz"
+                            placeholder="Javier gonzalez"
                             value={nombre}
                             onChange={(e) => handleInput(e, 'nombre')}
                         />
